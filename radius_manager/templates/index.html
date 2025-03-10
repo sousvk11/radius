@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12 mb-4">
+        <h2>Welcome to RADIUS Manager</h2>
+        <p>Manage your WPA2/WPA3 Enterprise WiFi authentication system</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fas fa-users"></i> Users
+                </h5>
+                <p class="card-text">Manage RADIUS users and their credentials</p>
+                <a href="{{ url_for('users') }}" class="btn btn-primary">Manage Users</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fas fa-wifi"></i> NAS Clients
+                </h5>
+                <p class="card-text">Configure wireless access points and other RADIUS clients</p>
+                <a href="{{ url_for('nas_clients') }}" class="btn btn-primary">Manage NAS Clients</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <i class="fas fa-desktop"></i> Active Sessions
+                </h5>
+                <p class="card-text">Monitor currently active user sessions</p>
+                <a href="{{ url_for('active_sessions') }}" class="btn btn-primary">View Sessions</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

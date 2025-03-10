@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-md-6">
+        <h2>NAS Clients</h2>
+    </div>
+    <div class="col-md-6 text-end">
+        <a href="{{ url_for('add_nas') }}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Add NAS Client
+        </a>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>NAS Name</th>
+                        <th>Short Name</th>
+                        <th>Secret</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for client in clients %}
+                    <tr>
+                        <td>{{ client.nasname }}</td>
+                        <td>{{ client.shortname }}</td>
+                        <td>********</td>
+                        <td>
+                            <button class="btn btn-sm btn-danger">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
